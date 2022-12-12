@@ -2,15 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Prep') {
+        stage('Build') {
             steps {
                 echo 'Building..'
             }
         }
-        stage('Build') {
+        stage('Test') {
             steps {
                 sh '''
-                cd terraform
                 terraform init
                 aws --version
                 '''
@@ -18,11 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '''
-                echo 'Deploying terraform infrastructure'
-                cd terraform
-                terraform apply -auto-approve
-                '''
+                echo 'Deploying....'
             }
         }
     }
