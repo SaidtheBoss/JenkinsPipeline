@@ -10,7 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                cd terraform
                 terraform init
                 aws --version
                 '''
@@ -24,6 +23,11 @@ pipeline {
                 terraform apply -auto-approve
                 '''
             }
+        }
+    }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
