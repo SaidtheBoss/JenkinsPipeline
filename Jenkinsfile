@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                cd terraform
                 terraform init
                 aws --version
                 '''
