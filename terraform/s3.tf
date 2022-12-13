@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dev_bucket" {
-  bucket = "jenkins-bucket-ziyotek-saidtheboss"
+  bucket = "jenkins-bucket-ziyotek-saidtheboss-2"
 
   policy = <<EOF
 {
