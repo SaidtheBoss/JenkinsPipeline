@@ -3,7 +3,7 @@ resource "aws_vpc" "tf_aws_project_vpc" {
   cidr_block = var.vpc_cird
 
   tags = {
-    "Name"      = "tf_aws_project_vpc"
+    "Name" = "tf_aws_project_vpc"
   }
 }
 #-------- SUBNETS -------------------#
@@ -13,7 +13,7 @@ resource "aws_subnet" "tf_public" {
   availability_zone = var.sub_az_1
 
   tags = {
-    "Name"      = "project_public_sub"
+    "Name" = "project_public_sub"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "tf_public2" {
   availability_zone = var.sub_az_2
 
   tags = {
-    "Name"      = "project_public2_sub"
+    "Name" = "project_public2_sub"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_internet_gateway" "tf_igw" {
   vpc_id = aws_vpc.tf_aws_project_vpc.id
 
   tags = {
-    "Name"      = "project_igw"
+    "Name" = "project_igw"
   }
 }
 #------------ ROUTE TABLES ---------------#
@@ -40,7 +40,7 @@ resource "aws_route_table" "route_public" {
   vpc_id = aws_vpc.tf_aws_project_vpc.id
 
   tags = {
-    "Name"      = "project_route_public"
+    "Name" = "project_route_public"
   }
 }
 resource "aws_route" "igw-route" {
