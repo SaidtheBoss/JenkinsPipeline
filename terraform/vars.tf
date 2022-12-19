@@ -1,10 +1,10 @@
 variable "default_region" {
-  type = string
+  type    = string
   default = "us-east-1"
 }
 ##---- vpc vars -----
 variable "vpc_cird" {
-  type = string
+  type    = string
   default = "124.10.0.0/16"
 }
 
@@ -36,6 +36,6 @@ variable "instance-type" {
   default = "t2.micro"
 }
 variable "ssh-key" {
-  default     = "Key_pair"
+  default     = "key-for-server"
   description = "key for ssh into ec2 instance"
 }
