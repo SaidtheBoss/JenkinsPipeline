@@ -36,6 +36,6 @@ variable "instance-type" {
   default = "t2.micro"
 }
 variable "ssh-key" {
-  default     = "key-for-server"
+  default     = "Key_pair"
   description = "key for ssh into ec2 instance"
 }
